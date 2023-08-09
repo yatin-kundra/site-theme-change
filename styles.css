@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    color: var(--text);
+    background: var(--bg);
+    transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+img {
+    height:200px;
+    width:400px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a {
+    color: currentColor;
+    text-decoration-color: none;
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    /* rgb(0, 255, 55) */
+    background: var(--bg-nav);
+
+    /* black */
+    color: var(--text);
+
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+
+
+header {
+    padding: 1em;
+    clip-path: polygon(50% 0%, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
+    background: var(--bg-nav);
+    margin-bottom: 1em;
+    padding-bottom: 3.5em;
+    text-align: center;
+}
+
+
+/* 
+header {
+    padding: 1em;
+     greenyellow
+    background: var(--bg-nav);
+    margin-bottom: 1em;
+    padding-bottom: 3.5em;
+    text-align: center;
+    clip-path: ellipse(700px 500px at 50% 50%);
+} */
+
+
+
+.dropdown {
+    position: absolute;     
+    width: 500px;
+    /* not visible till focused */
+    opacity: 0;   
+      /* so that it appears on top of all the layers  */
+    z-index: 2;
+    /* background-color: rgb(0, 0, 0); */
+    background: var(--bg-dropdown);
+    /* border-top: 2px solid rgb(0, 255, 55); */
+    border-top: 2px solid var(--border-color);
+
+    /*  to make it curved at bottom left and right corners */
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    /* these buttons are aligned horizontaly and we are maximizing the space around the items  */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transform: translateX(-40%);
+
+    
+    transition: opacity .15s ease-out;
+}
+
+.has-dropdown:focus-within .dropdown   {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+:root {
+    /* root is the global location to declare variable and they can be used other places */
+    /* here grey1 and grey2 etc are variable and they have their own values  */
+    --grey1: rgb(224, 220, 220);     
+    --grey2: rgb(175, 175, 175);
+    --grey3: rgb(92, 91, 91);
+    --grey4: rgb(85, 84, 84);
+    --grey5: rgb(15, 15, 15);
+    --blue: RGB: (84, 148, 218);
+    --purple:RGB: (109, 29, 198);
+    --yellow: RGB: (255, 228, 105);
+
+
+}
+
+.light {
+
+    --bg: var(--grey1);
+    --bg-nav: linear-gradient(to right, var(--grey2), var(--grey4));
+    --bg-dropdown: var(--grey1);
+    --text: var(--grey5);
+    --border-color: var(--blue);
+    --bg-solar: var(--yellow);
+
+
+}
+
+.dark {
+    --bg: var(--grey5);
+    --bg-nav: linear-gradient(to right, var(--grey3), var(--grey5));
+    --bg-dropdown: var(--grey5);
+    --text: var(--grey1);
+    --border-color: var(var(--purple));
+    --bg-solar: var(--blue);
+
+}
+
+.solar {
+    --grey1: #f7f8d0;
+    --grey2: #b6f880;
+    --grey3: #5ec72d;
+    --grey4: #3ea565;
+    --grey5: #005368;
+}
+
